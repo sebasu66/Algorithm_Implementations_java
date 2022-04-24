@@ -24,51 +24,7 @@ public class Main {
         System.out.println(commaSeparatedNodes);
     }
 
-
-
-
-    //Write a program that takes as input a number n and returns all the strings with n matched pairs of brackets.
-    public static List<String> generateBrackets(int n) {
-        List<String> result = new ArrayList<>();
-        generateBrackets(n, n, "", result);
-        return result;
-    }
-
-    private static void generateBrackets(int left, int right, String s, List<String> result) {
-        if (left == 0 && right == 0) {
-            result.add(s);
-            return;
-        }
-        if (left > 0) {
-            generateBrackets(left - 1, right, s + "[", result);
-        }
-        if (right > left) {
-            generateBrackets(left, right - 1, s + "]", result);
-        }
-    }
-
-    //Write a program that takes as input a number n and returns all the strings with n matched pairs of braces.
-    public static List<String> generateBraces(int n) {
-        List<String> result = new ArrayList<>();
-        generateBraces(n, n, "", result);
-        return result;
-    }
-
-    private static void generateBraces(int left, int right, String s, List<String> result) {
-        if (left == 0 && right == 0) {
-            result.add(s);
-            return;
-        }
-        if (left > 0) {
-            generateBraces(left - 1, right, s + "{", result);
-        }
-        if (right > left) {
-            generateBraces(left, right - 1, s + "}", result);
-        }
-    }
-
-
-    //factorial using memoization
+   //factorial using memoization
     public static int factorial(int n) {
         int[] memo = new int[n + 1];
         Arrays.fill(memo, -1);
